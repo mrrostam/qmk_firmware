@@ -1,18 +1,28 @@
+MCU = atmega32u4
+BOOTLOADER = caterina
+
 AUDIO_ENABLE = no           # Audio output
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
 COMMAND_ENABLE = no         # Commands for debug and configuration
 CONSOLE_ENABLE = no         # Console for debug
 EXTRAKEY_ENABLE = no        # Audio control and System control
-LTO_ENABLE = yes
 MOUSEKEY_ENABLE = no        # Mouse keys
-NKRO_ENABLE = no
-OLED_ENABLE= yes     # OLED display
-RGBLIGHT_ENABLE = no       # Enable WS2812 RGB underlight.
+NKRO_ENABLE = no			# NKRO mode enable
+RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
 SWAP_HANDS_ENABLE = no      # Enable one-hand typing
-WPM_ENABLE              = yes   # WPM Calculation
+CAPS_WORD_ENABLE = yes	  	# Enable caps word
+OLED_ENABLE = yes     		# OLED display
+WPM_ENABLE = yes   			# WPM Calculation
 
-CFLAGS                 += -flto
-EXTRAFLAGS             += -flto
+LTO_ENABLE = yes
 
-# SRC += ./lib/keylogger.c
+SRC += ./keymaps/mrrostam/util/keylogger.c \
+       ./keymaps/mrrostam/util/oled.c \
+       ./keymaps/mrrostam/util/wpm.c
+# If you want to change the display of OLED, you need to change here
+# SRC +=  ./lib/mode_icon_reader.c \
+        # ./lib/keylogger.c \
+        # ./lib/logo_reader.c \
+        # ./lib/host_led_state_reader.c \
+        # ./lib/timelogger.c \
