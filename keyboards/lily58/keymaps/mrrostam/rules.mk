@@ -19,7 +19,8 @@ LTO_ENABLE = yes
 
 SRC += ./keymaps/mrrostam/util/keylogger.c \
        ./keymaps/mrrostam/util/oled.c \
-       ./keymaps/mrrostam/util/wpm.c
+       ./keymaps/mrrostam/util/wpm.c \
+       ./keymaps/mrrostam/util/pomodoro.c
 # If you want to change the display of OLED, you need to change here
 # SRC +=  ./lib/mode_icon_reader.c \
         # ./lib/keylogger.c \

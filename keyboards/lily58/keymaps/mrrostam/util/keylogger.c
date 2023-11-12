@@ -2,14 +2,16 @@
 
 #include "mrrostam.h"
 
-static const char CODE_TO_NAME[60] = {
+static const char KEYCODE_TO_NAME[] = {
     ' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
     'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
     'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
     '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
-    'R', 'E', 'B', 'T', ' ', ' ', ' ', ' ', ' ', ' ',
-    ' ', ';', '\'', ' ', ',', '.', '/', ' ', ' ', ' '
+    'N', 'E', 'B', 'T', 'S', '-', '=', '[', ']', '\\',
+    '#', ';', '\'', '`', ',', '.', '/', 'C'
 };
+
+static const uint16_t KEYCODE_TO_NAME_LEN = sizeof(KEYCODE_TO_NAME) / sizeof(KEYCODE_TO_NAME[0]);
 
 static char info_str[15] = {};
 static char log_str[5] = {};
@@ -17,8 +19,8 @@ static int  log_str_idx = 0;
 
 void mr_keylog_set(uint16_t keycode, keyrecord_t *record) {
     char name = ' ';
-    if (keycode < 60) {
-        name = CODE_TO_NAME[keycode];
+    if (keycode < KEYCODE_TO_NAME_LEN) {
+        name = KEYCODE_TO_NAME[keycode];
     }
 
     snprintf(
