@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#define WORK_TIME ((uint32_t)25 * 60 * 1000)
-#define REST_TIME ((uint32_t)5 * 60 * 1000)
+#define WORK_TIME ((uint32_t)25 * 1000)
+#define REST_TIME ((uint32_t)5 * 1000)
 
 typedef enum pomo_state {
     _STOPPED,
@@ -34,7 +34,11 @@ const char* mr_pomodoro_state_get(void) {
     }
 }
 
-void mr_pomodoro_toggle(void) {
+bool mr_pomodoro_is_resting(void) {
+    return state == _REST;
+}
+
+void mr_pomodoro_toggle(uint8_t in_buflen, const void *in_data, uint8_t out_buflen, void *out_data) {
     if (is_running) {
         is_running = false;
         state = _STOPPED;
@@ -44,9 +48,6 @@ void mr_pomodoro_toggle(void) {
         total_timer = WORK_TIME;
         pomo_timer = timer_read32();
     }
-}
-
-void mr_pomodoro_display(void) {
 }
 
 void mr_pomodoro_timer_set(uint32_t timer) {
@@ -64,11 +65,11 @@ void mr_pomodoro_timer_set(uint32_t timer) {
 
             if (pomo_counter > 4) {
                 is_running = false;
+                pomo_counter = 0;
                 state = _STOPPED;
             }
 
-                pomo_timer = timer_read32();
-                pomo_counter = 0;
+            pomo_timer = timer_read32();
         }
     }
 }
@@ -87,6 +88,6 @@ const char* mr_pomodoro_timer_get(void) {
 }
 
 const char* mr_pomodoro_counter_get(void) {
-    snprintf(counter_str, sizeof(counter_str), "%02d", pomo_counter);
+    snprintf(counter_str, sizeof(counter_str), " %02d", pomo_counter);
     return counter_str;
 }

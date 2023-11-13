@@ -1,7 +1,7 @@
 #pragma once
 
-#define MASTER_LEFT
-// #define MASTER_RIGHT
+// #define MASTER_LEFT
+#define MASTER_RIGHT
 // #define EE_HANDS
 #define SPLIT_USB_DETECT
 
@@ -9,3 +9,5 @@
 #define TAPPING_TERM 100
 
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
+#define SPLIT_TRANSACTION_IDS_USER TOGGLE_POMODORO
