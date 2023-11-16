@@ -1,6 +1,3 @@
-MCU = atmega32u4
-BOOTLOADER = caterina
-
 AUDIO_ENABLE = no           # Audio output
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
@@ -22,10 +19,3 @@ SRC += ./keymaps/mrrostam/util/keylogger.c \
        ./keymaps/mrrostam/util/oled.c \
        ./keymaps/mrrostam/util/wpm.c \
        ./keymaps/mrrostam/util/pomodoro.c
-
-# If you want to change the display of OLED, you need to change here
-# SRC +=  ./lib/mode_icon_reader.c \
-        # ./lib/keylogger.c \
-        # ./lib/logo_reader.c \
-        # ./lib/host_led_state_reader.c \
-        # ./lib/timelogger.c \

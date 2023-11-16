@@ -11,3 +11,6 @@
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 #define SPLIT_TRANSACTION_IDS_USER TOGGLE_POMODORO
+
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET // Activates the double-tap behavior
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 200U // Timeout window in ms in which the double tap can occur.
