@@ -25,9 +25,6 @@ static void internal_oled_render_default_layer_state(void) {
         case _COLEMAK:
             oled_write("[CLM]", false);
             break;
-        case _MAC:
-            oled_write("[MAC]", false);
-            break;
         default:
             oled_write("[NOP]", true);
             break;

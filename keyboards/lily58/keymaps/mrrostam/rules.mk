@@ -15,6 +15,8 @@ WPM_ENABLE = yes   			# WPM Calculation
 
 LTO_ENABLE = yes
 
+# DEBOUNCE_TYPE = sym_eager_pk
+
 SRC += ./keymaps/mrrostam/util/keylogger.c \
        ./keymaps/mrrostam/util/oled.c \
        ./keymaps/mrrostam/util/wpm.c \
