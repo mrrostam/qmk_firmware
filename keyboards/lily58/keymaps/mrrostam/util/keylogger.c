@@ -2,7 +2,7 @@
 
 #include "mrrostam.h"
 
-static const char KEYCODE_TO_NAME[] = {
+const char KEYCODE_TO_NAME[] = {
     ' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
     'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
     'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
@@ -11,7 +11,8 @@ static const char KEYCODE_TO_NAME[] = {
     '#', ';', '\'', '`', ',', '.', '/', 'C'
 };
 
-static const uint16_t KEYCODE_TO_NAME_LEN = sizeof(KEYCODE_TO_NAME) / sizeof(KEYCODE_TO_NAME[0]);
+const uint16_t KEYCODE_TO_NAME_LEN = sizeof(KEYCODE_TO_NAME) / sizeof(KEYCODE_TO_NAME[0]);
+
 
 static char info_str[15] = {};
 static char log_str[5] = {};
@@ -22,11 +23,15 @@ void mr_keylog_set(uint16_t keycode, keyrecord_t *record) {
     if (keycode < KEYCODE_TO_NAME_LEN) {
         name = KEYCODE_TO_NAME[keycode];
     }
-
     snprintf(
         info_str,
         sizeof(info_str),
-        "r:%d\nc:%d\n%2d", record->event.key.row, record->event.key.col, keycode % 10000);
+        "%4d", keycode);
+
+    // snprintf(
+    //     info_str,
+    //     sizeof(info_str),
+    //     "r:%d\nc:%d\n%2d", record->event.key.row, record->event.key.col, keycode % 10000);
 
     if (log_str_idx == sizeof(log_str) - 1) {
         log_str_idx = 0;

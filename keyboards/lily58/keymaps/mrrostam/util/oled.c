@@ -58,8 +58,7 @@ bool oled_task_user(void) {
     internal_oled_render_separator();
     oled_write_ln(mr_wpm_get(), false);
     internal_oled_render_separator();
-    // oled_write_ln(mr_keylog_info_get(), false);
-    // internal_oled_render_space();
+    oled_write_ln(mr_keylog_info_get(), false);
     oled_write_ln(mr_keylog_log_get(),  false);
   } else {
     oled_write(mr_pomodoro_state_get(), mr_pomodoro_is_resting());
@@ -68,7 +67,7 @@ bool oled_task_user(void) {
     oled_write(mr_pomodoro_timer_get(), mr_pomodoro_is_resting());
     internal_oled_render_space();
     oled_write("[PC] ", false);
-    oled_write(mr_pomodoro_counter_get(), false);
+    oled_write_ln(mr_pomodoro_counter_get(), false);
   }
     return false;
 }

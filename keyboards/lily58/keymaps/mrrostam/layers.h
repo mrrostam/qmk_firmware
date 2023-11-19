@@ -1,3 +1,5 @@
+#pragma once
+
 enum layers {
     _QWERTY=0,
     _GAMING,
