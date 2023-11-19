@@ -36,11 +36,11 @@ static void internal_oled_render_active_layer_state(void) {
         case _QWERTY:
             oled_write("[TYP]", false);
             break;
-        case _LOWER:
-            oled_write("[LWR]", true);
+        case _NAV:
+            oled_write("[NAV]", true);
             break;
-        case _RAISE:
-            oled_write("[RSE]", true);
+        case _SYM:
+            oled_write("[SYM]", true);
             break;
         case _ADJUST:
             oled_write("[ADJ]", true);

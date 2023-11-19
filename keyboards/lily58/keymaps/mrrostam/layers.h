@@ -2,7 +2,7 @@ enum layers {
     _QWERTY=0,
     _GAMING,
     _COLEMAK,
-    _LOWER,
-    _RAISE,
+    _SYM,
+    _NAV,
     _ADJUST,
 };

@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#define WORK_TIME ((uint32_t)25 * 1000)
-#define REST_TIME ((uint32_t)5 * 1000)
+#define WORK_TIME ((uint32_t)25 * 60 * 1000)
+#define REST_TIME ((uint32_t)5 * 60 * 1000)
 
 typedef enum pomo_state {
     _STOPPED,
