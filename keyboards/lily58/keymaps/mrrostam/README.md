@@ -1,4 +1,4 @@
-This is my personal layout for Lily58 keyboard. It's designed with a left-handed person in mind and has the following features:
+This is my personalized layout for the Lily58 keyboard, specifically designed for a left-handed user. It incorporates the following features:
 
-1 - Pomodoro
-2 - Specific layour for gaming
+- Pomodoro timer
+- Customized layout tailored for gaming
